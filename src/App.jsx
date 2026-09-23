@@ -13,7 +13,6 @@ import {
   PKG,
   RECORD,
   RELIC_TYPE,
-  TOKEN_CONFIG,
 } from "./ids";
 
 function cleanAddr(raw) {
@@ -109,7 +108,6 @@ export default function App() {
       arguments: [
         tx.object(CONFIG),
         tx.object(RECORD),
-        tx.object(TOKEN_CONFIG),
         tx.object(coin.coinObjectId),
         tx.pure.string("Genesis Relic"),
         tx.pure.string("Seal minted on Relics."),
@@ -201,14 +199,19 @@ export default function App() {
               <em>Make it matter.</em>
             </h1>
             <p className="hero-lede">
-              $RELIC is the ticket. A Relic is the thing you actually keep,
-              send, and risk. Mint a clay seal, find someone willing to burn
-              theirs, and leave a little history behind.
+              $RELIC is live on Sui mainnet. A Relic is the thing you actually
+              keep, send, and risk. Mint a clay seal, find someone willing to
+              burn theirs, and leave a little history behind.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#app">
                 Enter the loop <span>↘</span>
               </a>
+              {COIN.buyUrl ? (
+                <a className="button button-dark" href={COIN.buyUrl} target="_blank" rel="noreferrer">
+                  Buy $RELIC <span>↗</span>
+                </a>
+              ) : null}
               <a className="text-link" href="#story">
                 Read the story <span>→</span>
               </a>
@@ -257,8 +260,9 @@ export default function App() {
               <div className="card-topline"><span className="mini-icon">$</span><span>01 / THE TICKET</span></div>
               <h3>${COIN.ticker}</h3>
               <p>
-                Hold enough $RELIC to pass the mint gate. After launch, it is
-                the liquid side of the idea: tradeable, loud, and easy to find.
+                Hold enough $RELIC to pass the mint gate. It is the live liquid
+                side of the idea: tradeable, loud, and easy to find on Sui
+                mainnet.
               </p>
               <div className="coin-meta"><span>SUPPLY GATE</span><strong>on-chain</strong></div>
             </article>
@@ -358,14 +362,14 @@ export default function App() {
             <p className="eyebrow">Get in early</p>
             <h2>Find the signal.<br /><em>Bring your wallet.</em></h2>
             <p>
-              The mainnet art is already here. The coin address and buy route
-              will appear when they are live. Until then, keep the story close.
+              $RELIC is live on Sui mainnet. Buy the ticket, bring it to the
+              mint gate, and keep the story moving between wallets.
             </p>
           </div>
           <div className="coin-terminal">
-            <div className="terminal-header"><span className="terminal-dot" /><span>$RELIC / MAINNET</span><span className="terminal-live">● SOON</span></div>
+            <div className="terminal-header"><span className="terminal-dot" /><span>$RELIC / MAINNET</span><span className="terminal-live">● LIVE</span></div>
             <div className="terminal-body">
-              <span className="terminal-label">CONTRACT ADDRESS</span>
+              <span className="terminal-label">COIN TYPE / CONTRACT</span>
               <div className="ca-box">
                 <span>{COIN.ca}</span>
                 <button
@@ -380,6 +384,7 @@ export default function App() {
                 {COIN.telegram ? <a href={COIN.telegram} target="_blank" rel="noreferrer">Telegram ↗</a> : null}
                 {COIN.twitter ? <a href={COIN.twitter} target="_blank" rel="noreferrer">X / @SuiRelics ↗</a> : null}
                 {COIN.buyUrl ? <a href={COIN.buyUrl} target="_blank" rel="noreferrer">Buy $RELIC ↗</a> : null}
+                {COIN.chartUrl ? <a href={COIN.chartUrl} target="_blank" rel="noreferrer">Chart ↗</a> : null}
               </div>
             </div>
           </div>

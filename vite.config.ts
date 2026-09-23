@@ -13,15 +13,15 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@": path.resolve(root, "src")
+      "@": path.resolve(root, "src"),
     },
-    dedupe: ["react", "react-dom"]
+    dedupe: ["react", "react-dom"],
   },
 
   root,
 
   build: {
     outDir: path.resolve(root, "dist"),
-    emptyOutDir: true
-  }
+    emptyOutDir: true,
+  },
 });

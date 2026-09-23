@@ -9,8 +9,11 @@ export const CONFIG =
 export const RECORD =
   "0xc829e0b6c25602702ec96cf0039e302b2e37664b7aee3863f2d741e0c5677f9c";
 
+// Mainnet no longer uses the testnet relic_token::TokenConfig object.
+// Mint fee/configuration is stored on CONFIG.
 export const TOKEN_CONFIG = "";
-export const RELIC_TYPE = "";
+export const RELIC_TYPE =
+  "0x5fe73610a1d744a17ecc899ab808affbfd13abbf64a496d8472048246a13776a::suipump::SUIPUMP";
 export const RELIC_NFT = `${PKG}::relics::Relic`;
 export const MERGE_DEAL = `${PKG}::relics::MergeDeal`;
 export const MERGE_REQUEST = `${PKG}::relics::MergeRequest`;
@@ -30,9 +33,11 @@ export const COIN = {
   name: "RELIC",
   ticker: "RELIC",
   network: "Sui mainnet",
-  ca: "soon",
-  buyUrl: "",
-  chartUrl: "",
+  ca: "0x5fe73610a1d744a17ecc899ab808affbfd13abbf64a496d8472048246a13776a::suipump::SUIPUMP",
+  buyUrl:
+    "https://suipump.org/token/0x7a179bd8fc178cd7c16ff6aaedfcee3007ba7fbb0a6f99395dd15ab84ca3236e",
+  chartUrl:
+    "https://suipump.org/token/0x7a179bd8fc178cd7c16ff6aaedfcee3007ba7fbb0a6f99395dd15ab84ca3236e",
   twitter: "https://x.com/SuiRelics",
   telegram: "https://t.me/+KASY4M196qU5OWU0",
 };
