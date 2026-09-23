@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Relics"
+description = "A modern Sui landing page and wallet app for Relics, a social collection where $RELIC unlocks clay seal NFTs and holders can mint, send, and fuse them."
+version = "1.0.0"
+id = "artifacts/relics"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18381
+
+[services.development]
+run = "pnpm --filter @workspace/relics run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/relics", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/relics/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18381"
+BASE_PATH = "/"
